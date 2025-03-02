@@ -17,20 +17,24 @@
 <body class="font-barlow">
   <header class="header">
     <nav class="header__nav">
-      <img src="./src/images/logo.svg" alt="Sunnyside logo's">
-      <ul class="header__mobileMenu">
+      <img src="./src/images/logo.svg" alt="Sunnyside logo's" class="header__logo">
+      <div class="header__mobileMenu">
+        <div class="header__mobileMenuClipPath"></div>
+        <ul class="header__mobileMenuList">
+          <li class="header__mobileMenuItem"><a href="#">About</a></li>
+          <li class="header__mobileMenuItem"><a href="#">Services</a></li>
+          <li class="header__mobileMenuItem"><a href="#">Projects</a></li>
+          <li class="header__mobileMenuItem header__mobileMenuItem--contact font-fraunces"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <img src="./src/images/icon-hamburger.svg" alt="icon-hamburger" class="header__hamburger">
+      <ul class="header__desktopMenu">
         <li>About</li>
         <li>Services</li>
         <li>Projects</li>
-        <li>Contact</li>
+        <li class="contact font-fraunces">Contact</li>
       </ul>
-      <img src="./src/images/icon-hamburger.svg" alt="icon-hamburger">
-      <!-- <ul class="mobile-menu">
-        <li>About</li>
-        <li>Services</li>
-        <li>Projects</li>
-        <li>Contact</li>
-      </ul> -->
     </nav>
     <div class="header__content">
       <h1 class="header__title font-fraunces">We are creatives</h1>
@@ -48,7 +52,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--second">
     <div class="section__backgroundImage section__backgroundImage--transformStandOut"></div>
     <div class="section__content">
       <h2 class="section__title font-fraunces">Stand out to the right audience</h2>

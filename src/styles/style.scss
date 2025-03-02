@@ -14,13 +14,82 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__logo{
+        max-height: 40px;
+    }
     &__nav{
         display: flex;
         padding: 3em 2em;
         justify-content: space-between;
+        width: 100%;
+        max-width: 1000px;
     }
     &__mobileMenu{
+        position: absolute;
+        opacity: 0;
+        top: 80px;
+        right: 5%;
         display: none;
+        flex-direction: column;
+        align-items: end;
+        transition: opacity 2s ease-out;
+        &--active{
+            display: flex;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+    }
+    &__mobileMenuClipPath{
+        display: block;
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        width: 20px;
+        height: 20px;
+        background-color: white;
+    }
+    &__mobileMenuList{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        width: 300px;
+        height: 250px;
+        list-style: none;
+        background-color: white;
+    }
+    &__mobileMenuItem{
+        padding: 1em 2em;
+        font-size: 1.3rem;
+        &--contact{
+            background-color: $yellow;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .header__hamburger{
+        display: none;
+    }
+    &__desktopMenu{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        li{
+            padding: 0em 1.5em;
+            color: white;
+            font-size: 1.6rem;
+        }
+        .contact{
+            color: black;
+            background-color: $white;
+            padding: 0.5em 2em;
+            border-radius: 20px;
+        }
     }
     &__content{
         display: flex;
@@ -218,6 +287,122 @@ body{
         display: flex;
         a{
             padding: 1em;
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .section{
+        &__backgroundImage{
+            &--transformSection{
+                background-image: url('../images/desktop/image-transform.jpg');
+            }
+            &--transformStandOut{
+                background-image: url('../images/desktop/image-stand-out.jpg');
+            }
+        }
+    }
+    .sectionOffert{
+        &__item{
+            &--graphicDesign{
+                background-image: url('../images/desktop/image-graphic-design.jpg');
+            }
+            &--photography{
+                background-image: url('../images/desktop/image-photography.jpg');
+            }
+        }
+    }
+    .gallery{
+        &__item{
+            &:nth-child(1){
+                background-image: url('../images/desktop/image-gallery-milkbottles.jpg');
+            }
+            &:nth-child(2){
+                background-image: url('../images/desktop/image-gallery-orange.jpg');
+            }
+            &:nth-child(3){
+                background-image: url('../images/desktop/image-gallery-cone.jpg');
+            }
+            &:nth-child(4){
+                background-image: url('../images/desktop/image-gallery-sugarcubes.jpg');
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .header{
+        background-image: url('../images/desktop/image-header.jpg');
+        
+    }
+    .header__hamburger{
+        display: none;
+    }
+
+    .section{
+        flex-direction: row;
+        &__backgroundImage{
+            width: 50%;
+            height: 600px;
+        }
+        &__content{
+            width: 50%;
+            height: 600px;
+            padding: 10em;
+        }
+        &__text,  &__linkText{
+            font-size: 2rem;
+        }
+        &--second{
+            flex-direction: row-reverse;
+        }
+    }
+    .sectionOffert{
+        flex-direction: row;
+        &__item{
+            width: 50%;
+            height: 700px;
+            padding: 5em;
+        }
+    }
+    .testimonials{
+        &__title{
+            font-size: 2rem;
+        }
+        &__image{
+            width: 90px;
+            height: 90px;
+        }
+    }
+    .gallery{
+        flex-wrap: nowrap;
+        &__item{
+            height: 500px;
+        }
+    }
+    .footer{
+        &__menu{
+            font-size: 1.5rem;
+        }
+        &__socials{
+            a{
+                padding: 3em;
+                img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
         }
     }
 }
