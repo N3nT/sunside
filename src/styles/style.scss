@@ -209,6 +209,10 @@ body{
         letter-spacing: 0.2em;
         color: $grayishBlue;
     }
+    &__cardsWrapper{
+        display: flex;
+        flex-direction: column;
+    }
     &__card{
         display: flex;
         flex-direction: column;
@@ -381,6 +385,9 @@ body{
         &__image{
             width: 90px;
             height: 90px;
+        }
+        &__cardsWrapper{
+            flex-direction: row;
         }
     }
     .gallery{
